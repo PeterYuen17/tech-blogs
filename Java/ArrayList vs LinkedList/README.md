@@ -51,7 +51,7 @@ If the `newCapacity` is still not large enough, it will be set to minCapacity : 
 
 The maximum size of the array is `Integer.MAX_VALUE`.   
 
-It is recommended that we should define the size of the ArrayList if we know it in advance:`public ArrayList(int initialCapacity)`. This is because the time spent in enlarging the array and copying data could be saved.
+It is recommended that we should define the size of the ArrayList if we know it in advance : `public ArrayList(int initialCapacity)`. This is because the time spent in enlarging the array and copying data could be saved.
 
 ### Add Data
 
