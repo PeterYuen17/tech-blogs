@@ -26,22 +26,22 @@ As we all know, the size of an array is fixed. When the original array's size is
 
 ```
 /**
-     * Increases the capacity to ensure that it can hold at least the
-     * number of elements specified by the minimum capacity argument.
-     *
-     * @param minCapacity the desired minimum capacity
-     */
-    private void grow(int minCapacity) {
-        // overflow-conscious code
-        int oldCapacity = elementData.length;
-        int newCapacity = oldCapacity + (oldCapacity >> 1);
-        if (newCapacity - minCapacity < 0)
-            newCapacity = minCapacity;
-        if (newCapacity - MAX_ARRAY_SIZE > 0)
-            newCapacity = hugeCapacity(minCapacity);
-        // minCapacity is usually close to size, so this is a win:
-        elementData = Arrays.copyOf(elementData, newCapacity);
-    }
+* Increases the capacity to ensure that it can hold at least the
+* number of elements specified by the minimum capacity argument.
+*
+* @param minCapacity the desired minimum capacity
+*/
+private void grow(int minCapacity) {
+    // overflow-conscious code
+    int oldCapacity = elementData.length;
+    int newCapacity = oldCapacity + (oldCapacity >> 1);
+    if (newCapacity - minCapacity < 0)
+        newCapacity = minCapacity;
+    if (newCapacity - MAX_ARRAY_SIZE > 0)
+        newCapacity = hugeCapacity(minCapacity);
+    // minCapacity is usually close to size, so this is a win:
+    elementData = Arrays.copyOf(elementData, newCapacity);
+}
 ```
 
 We can see that initially it would increase its capacity to 150% : `int newCapacity = oldCapacity + (oldCapacity >> 1)`.   
@@ -60,22 +60,21 @@ For `public boolean add(E e)`, `newData` would become the last element of the ar
 
 ```
 public boolean add(E e) {
-        ensureCapacityInternal(size + 1);  // Increments modCount!!
-        elementData[size++] = e;
-        return true;
-    }
+    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    elementData[size++] = e;
+    return true;
+}
 ``` 
 
 For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `index`. Here is the source code:
 
 ```
 public void add(int index, E element) {
-        rangeCheckForAdd(index);
+    rangeCheckForAdd(index);
 
-        ensureCapacityInternal(size + 1);  // Increments modCount!!
-        System.arraycopy(elementData, index, elementData, index + 1,
-                         size - index);
-        elementData[index] = element;
-        size++;
+    ensureCapacityInternal(size + 1);  // Increments modCount!!
+    System.arraycopy(elementData, index, elementData, index + 1, size - index);
+    elementData[index] = element;
+    size++;
 }
 ```   
