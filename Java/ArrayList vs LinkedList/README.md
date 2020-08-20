@@ -80,6 +80,27 @@ public void add(int index, E element) {
 }
 ```
 
+### Remove Data
+
+We can see that element[index + 1, size - 1] needs to be moved in order to achieve this.
+
+```
+public E remove(int index) {
+    rangeCheck(index);
+
+    modCount++;
+    E oldValue = elementData(index);
+
+    int numMoved = size - index - 1;
+    if (numMoved > 0)
+        System.arraycopy(elementData, index+1, elementData, index, numMoved);
+    
+    elementData[--size] = null; // clear to let GC do its work
+    
+	 return oldValue;
+}
+```
+
 ## LinkedList
 
 ### Add Data
@@ -156,3 +177,7 @@ public E pop() { return removeFirst(); }
 ```
 
 ## Conclusion
+
+1. ArrayList would become a better choice if there are a large number of random access of element, since ArrayList just gets the value from `elementData[]`, while LinkedList needs to traverse the doubly-linked list.
+
+2. LinkedList would do better in adding or removing elements. It does not involve the operation of copying data.
