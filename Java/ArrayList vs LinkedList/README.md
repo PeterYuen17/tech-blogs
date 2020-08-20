@@ -51,3 +51,31 @@ If the `newCapacity` is still not large enough, it will be set to `minCapacity`:
 The maximum size of the array is `Integer.MAX_VALUE`.   
 
 It is recommended that we should define the size of the ArrayList if we know it in advance:`public ArrayList(int initialCapacity)`. This is because the time spent in enlarging the array and copying data could be saved.
+
+### Add Data
+
+There are two methods that implement this function:`public boolean add(E e)`&`public void add(int index, E element)`.   
+
+For `public boolean add(E e)`, `newData` would become the last element of the array:
+
+```
+public boolean add(E e) {
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        elementData[size++] = e;
+        return true;
+    }
+``` 
+
+For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `index`. Here is the source code:
+
+```
+public void add(int index, E element) {
+        rangeCheckForAdd(index);
+
+        ensureCapacityInternal(size + 1);  // Increments modCount!!
+        System.arraycopy(elementData, index, elementData, index + 1,
+                         size - index);
+        elementData[index] = element;
+        size++;
+}
+```   
