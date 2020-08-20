@@ -122,7 +122,7 @@ Node<E> node(int index) {
 
 ### Queue Operations
 
-As I mentioned earlier, LinkedList also implements `Queue` interface. Some of its implementations are as follows:   
+As I mentioned earlier, LinkedList also implements `Queue` interface. Some of its implementations are as follows :   
 
 `peek()`: Retrieves, but does not remove, the head (first element) of this list.
 ``` 
