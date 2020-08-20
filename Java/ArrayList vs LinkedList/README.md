@@ -111,12 +111,12 @@ public E poll() {
     return (f == null) ? null : unlinkFirst(f);
 }
 ```
+`remove()`: Retrieves and removes the head (first element) of this list.
 ```
-//Retrieves and removes the head (first element) of this list.
 public E remove() { return removeFirst(); }
 ```
+`offer(E e)`: Adds the specified element as the tail (last element) of this list.   
+We can see that there is no difference between offer(e) and add(e).
 ```
-//Adds the specified element as the tail (last element) of this list.
-//We can see that there is no difference between offer(e) and add(e).
 public boolean offer(E e) { return add(e); }
 ```
