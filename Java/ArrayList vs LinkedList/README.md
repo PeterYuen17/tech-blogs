@@ -97,7 +97,7 @@ public E remove(int index) {
     
     elementData[--size] = null; // clear to let GC do its work
     
-	 return oldValue;
+    return oldValue;
 }
 ```
 
