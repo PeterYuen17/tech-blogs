@@ -82,7 +82,7 @@ public void add(int index, E element) {
 
 ### Remove Data
 
-We can see that element[index + 1, size - 1] needs to be moved in order to achieve this.
+We can see that in order to remove elementData[index], elementData[index + 1, size - 1] also need to be left shift : 
 
 ```
 public E remove(int index) {
