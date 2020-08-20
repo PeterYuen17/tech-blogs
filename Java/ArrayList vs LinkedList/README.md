@@ -78,7 +78,7 @@ public void add(int index, E element) {
     elementData[index] = element;
     size++;
 }
-```   
+```
 
 ## LinkedList
 
@@ -93,9 +93,36 @@ public boolean add(E e) {
 }
 ```
 
+### Get Data
+
+We can see that LinkedList needs to traverse the doubly-linked list so as to get the `index` Node :
+
+```
+public E get(int index) {
+    checkElementIndex(index);
+    return node(index).item;
+}
+
+Node<E> node(int index) {
+    // assert isElementIndex(index);
+
+    if (index < (size >> 1)) {
+        Node<E> x = first;
+        for (int i = 0; i < index; i++)
+            x = x.next;
+        return x;
+    } else {
+        Node<E> x = last;
+        for (int i = size - 1; i > index; i--)
+            x = x.prev;
+        return x;
+    }
+}
+```
+
 ### Queue Operations
 
-As I mentioned earlier, LinkedList also implements `Queue` interface. Some of the implementations are as follows:   
+As I mentioned earlier, LinkedList also implements `Queue` interface. Some of its implementations are as follows:   
 
 `peek()`: Retrieves, but does not remove, the head (first element) of this list.
 ``` 
@@ -119,3 +146,13 @@ public E remove() { return removeFirst(); }
 ```
 public boolean offer(E e) { return add(e); }
 ```
+`push(E e)`: inserts the element at the front of this list.
+```
+public void push(E e) { addFirst(e); }
+```
+`pop()`: removes and returns the first element of this list.
+```
+public E pop() { return removeFirst(); }
+```
+
+## Conclusion
