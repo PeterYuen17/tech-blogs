@@ -8,7 +8,7 @@ ArrayList is implemented as a `resizable-array`, while LinkedList is implemented
 
 ## ArrayList
 
-### Capacity
+### Capacity   
 
 As I mentioned earlier, ArrayList uses an array to store data.
 
