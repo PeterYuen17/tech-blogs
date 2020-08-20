@@ -117,6 +117,8 @@ public E remove(int index) {
 
 ## LinkedList
 
+As I mentioned earlier, LinkedList uses a doubly-linked list to store data.
+
 ### Add Data
 
 The new element would become the last node of the list :
