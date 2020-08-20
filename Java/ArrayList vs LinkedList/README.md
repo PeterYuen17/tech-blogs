@@ -166,14 +166,14 @@ public E peek() {
     return (f == null) ? null : f.item;
 }
 ```
-`poll()`: Retrieves and removes the head (first element) of this list. @return the head of this list, or {@code null} if this list is empty
+`poll()`: Retrieves and removes the head (first element) of this list. @return the head of this list, or {@code null} if this list is empty.
 ```
 public E poll() {
     final Node<E> f = first;
     return (f == null) ? null : unlinkFirst(f);
 }
 ```
-`remove()`: Retrieves and removes the head (first element) of this list. @return the head of this list. @throws NoSuchElementException if this list is empty
+`remove()`: Retrieves and removes the head (first element) of this list. @return the head of this list. @throws NoSuchElementException if this list is empty.
 ```
 public E remove() { return removeFirst(); }
 ```
