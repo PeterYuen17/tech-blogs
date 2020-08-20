@@ -47,7 +47,7 @@ private void grow(int minCapacity) {
 
 We can see that initially it would increase its capacity to 150% : `int newCapacity = oldCapacity + (oldCapacity >> 1)`.   
 
-If the `newCapacity` is still not large enough, it will be set to minCapacity :`newCapacity = minCapacity`.
+If the `newCapacity` is still not large enough, it will be set to minCapacity : `newCapacity = minCapacity`.
 
 The maximum size of the array is `Integer.MAX_VALUE`.   
 
