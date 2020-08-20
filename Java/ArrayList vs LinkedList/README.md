@@ -23,7 +23,7 @@ public ArrayList() {
 }
 ```
 
-As we all know, the size of an array is fixed. When the original array's size is not enough, ArrayList would create a larger one and transfer data to it. Here is the source code:
+As we all know, the size of an array is fixed. When the original array's size is not enough, ArrayList would create a larger one and transfer data to it :
 
 ```
 /**
@@ -57,7 +57,7 @@ It is recommended that we should define the size of the ArrayList if we know it 
 
 There are two methods that implement this function:`public boolean add(E e)`&`public void add(int index, E element)`.   
 
-For `public boolean add(E e)`, the new data would become the last element of the array:
+For `public boolean add(E e)`, the new data would become the last element of the array :
 
 ```
 public boolean add(E e) {
@@ -82,7 +82,7 @@ public void add(int index, E element) {
 
 ### Remove Data
 
-We can see that in order to remove elementData[index], elementData[index + 1, size - 1] also need to be left shift : 
+We can see that in order to remove elementData[index], elementData[index + 1, size - 1] also need to be left shifted : 
 
 ```
 public E remove(int index) {
