@@ -57,7 +57,7 @@ It is recommended that we should define the size of the ArrayList if we know it 
 
 There are two methods that implement this function:`public boolean add(E e)`&`public void add(int index, E element)`.   
 
-For `public boolean add(E e)`, `newData` would become the last element of the array:
+For `public boolean add(E e)`, the new data would become the last element of the array:
 
 ```
 public boolean add(E e) {
@@ -67,7 +67,7 @@ public boolean add(E e) {
 }
 ``` 
 
-For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `index`. Here is the source code:
+For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `elementData[index]`:
 
 ```
 public void add(int index, E element) {
