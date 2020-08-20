@@ -55,7 +55,7 @@ It is recommended that we should define the size of the ArrayList if we know it 
 
 ### Add Data
 
-There are two methods that implement this function:`public boolean add(E e)`&`public void add(int index, E element)`.   
+There are two methods that implement this function : `public boolean add(E e)` & `public void add(int index, E element)`.   
 
 For `public boolean add(E e)`, the new data would become the last element of the array :
 
@@ -67,7 +67,7 @@ public boolean add(E e) {
 }
 ``` 
 
-For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `elementData[index]`:
+For `public void add(int index, E element)`, it would first move the data in `elementData` from `[index, element.length - 1]` to `[index + 1, element.length]`, and put the new element in `elementData[index]` :
 
 ```
 public void add(int index, E element) {
@@ -77,6 +77,20 @@ public void add(int index, E element) {
     System.arraycopy(elementData, index, elementData, index + 1, size - index);
     elementData[index] = element;
     size++;
+}
+```
+
+### Get Data
+
+```
+public E get(int index) {
+    rangeCheck(index);
+
+    return elementData(index);
+}
+
+E elementData(int index) {
+    return (E) elementData[index];
 }
 ```
 
@@ -109,14 +123,14 @@ The new element would become the last node of the list :
 
 ```
 public boolean add(E e) {
-     linkLast(e);
-     return true;
+    linkLast(e);
+    return true;
 }
 ```
 
 ### Get Data
 
-We can see that LinkedList needs to traverse the doubly-linked list so as to get the `index` Node :
+We can see that LinkedList needs to traverse the doubly-linked list so as to get the `index` node :
 
 ```
 public E get(int index) {
