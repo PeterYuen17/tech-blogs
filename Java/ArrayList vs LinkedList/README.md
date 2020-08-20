@@ -1,10 +1,10 @@
 # ArrayList vs LinkedList
 
-Both ArrayList and LinkedList implement Java List interface, and their functions seem to be very similar. This article would compare the differences between them.
+Both ArrayList and LinkedList implement Java `List` interface, and their functions seem to be very similar. This article would compare the differences between them.
 
 ## Main Differences in Implementation 
 
-ArrayList is implemented as a resizable-array, while LinkedList is implemented as a doubly-linked list. LinkedList also implements Queue interface, which means it provides Queue's methods like peek() and poll() as well.
+ArrayList is implemented as a `resizable-array`, while LinkedList is implemented as a `doubly-linked list`. LinkedList also implements `Queue` interface, which means it provides Queue's methods like `peek()` and `poll()` as well.
 
 ## ArrayList
 
@@ -42,7 +42,7 @@ As we all know, the size of an array is fixed. When the original array's size is
     }
 ```
 
-We can see that initially it would increase the capacity to 150% : `int newCapacity = oldCapacity + (oldCapacity >> 1)`.   
+We can see that initially it would increase its capacity to 150% : `int newCapacity = oldCapacity + (oldCapacity >> 1)`.   
 
 If the `newCapacity` is still not large enough, it will be set to `minCapacity`:`newCapacity = minCapacity`.
 
