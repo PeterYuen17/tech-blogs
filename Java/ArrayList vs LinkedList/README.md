@@ -95,7 +95,7 @@ public boolean add(E e) {
 
 ### Queue Operations
 
-As I mentioned earlier, LinkedList also implements `Queue` interface. The implementations are as follows:
+As I mentioned earlier, LinkedList also implements `Queue` interface. Some of the implementations are as follows:
 
 ``` 
 //Retrieves, but does not remove, the head (first element) of this list.
@@ -103,12 +103,20 @@ public E peek() {
     final Node<E> f = first;
     return (f == null) ? null : f.item;
 }
-
+```
+```
 //Retrieves and removes the head (first element) of this list.
 public E poll() {
     final Node<E> f = first;
     return (f == null) ? null : unlinkFirst(f);
 }
-
-
+```
+```
+//Retrieves and removes the head (first element) of this list.
+public E remove() { return removeFirst(); }
+```
+```
+//Adds the specified element as the tail (last element) of this list.
+//We can see that there is no difference between offer(e) and add(e).
+public boolean offer(E e) { return add(e); }
 ```
