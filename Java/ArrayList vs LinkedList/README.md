@@ -4,7 +4,7 @@ Both ArrayList and LinkedList implement Java `List` interface, and their functio
 
 ## Main Differences in Implementation 
 
-ArrayList is implemented as a `resizable-array`, while LinkedList is implemented as a `doubly-linked list`. LinkedList also implements `Queue` interface, which means it provides Queue's methods like `peek()` and `poll()` as well.
+ArrayList is implemented as a `resizable-array`, while LinkedList is implemented as a `doubly-linked list`. LinkedList also implements `Queue` interface, which means it provides Queue operations like `peek()` and `poll()` as well.
 
 ## ArrayList
 
@@ -79,3 +79,36 @@ public void add(int index, E element) {
     size++;
 }
 ```   
+
+## LinkedList
+
+### Add Data
+
+The new element would become the last node of the list:
+
+```
+public boolean add(E e) {
+     linkLast(e);
+     return true;
+}
+```
+
+### Queue Operations
+
+As I mentioned earlier, LinkedList also implements `Queue` interface. The implementations are as follows:
+
+``` 
+//Retrieves, but does not remove, the head (first element) of this list.
+public E peek() {
+    final Node<E> f = first;
+    return (f == null) ? null : f.item;
+}
+
+//Retrieves and removes the head (first element) of this list.
+public E poll() {
+    final Node<E> f = first;
+    return (f == null) ? null : unlinkFirst(f);
+}
+
+
+```
