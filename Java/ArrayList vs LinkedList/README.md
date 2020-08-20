@@ -180,4 +180,4 @@ public E pop() { return removeFirst(); }
 
 1. ArrayList would become a better choice if there are a large number of random access of element, since ArrayList just gets the value from `elementData[]`, while LinkedList needs to traverse the doubly-linked list.
 
-2. LinkedList would do better in adding or removing elements since it does not involve the operation of copying or moving data.
+2. LinkedList would do better in adding or removing elements since it does not involve the operations of copying or moving data.
