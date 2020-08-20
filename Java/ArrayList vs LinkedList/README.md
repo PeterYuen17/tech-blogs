@@ -84,7 +84,7 @@ public void add(int index, E element) {
 
 ### Add Data
 
-The new element would become the last node of the list:
+The new element would become the last node of the list :
 
 ```
 public boolean add(E e) {
