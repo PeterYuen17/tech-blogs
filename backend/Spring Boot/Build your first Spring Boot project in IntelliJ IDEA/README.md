@@ -27,7 +27,7 @@
    
 ![](images/step6.png)
 
-7. Create a Package `controller` under `demo`, and create a class called `DemoController` under `controller`.   
+7. Create a package `controller` under `demo`, and create a class called `DemoController` under `controller`.   
 
    
 ![](images/step7.png)
