@@ -48,7 +48,7 @@ public class DemoController
 }
 ```
 
-9. Run `DemoApplication`, and open `http://localhost:8080/demo` in Browser. Your first Spring Boot project runs successfully!   
+9. Run `DemoApplication`, and enter `http://localhost:8080/demo` in a browser. Your first Spring Boot project should run successfully!   
 
    
 ![](images/step9.png)
