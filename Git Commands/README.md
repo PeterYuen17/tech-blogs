@@ -11,4 +11,6 @@ You are about to commit a change, but you notice that someone has modified the s
 3. `git stash pop`
 
 ### Explanation:   
-`git stash` : stash your code locally, and return the project to the last commit. `git pull` : pull commits. `git stash pop` : auto-merge the conflicted files.
+`git stash` : stash your code locally, and return the project to the last commit.   
+`git pull` : pull commits.   
+`git stash pop` : auto-merge the conflicted files.
