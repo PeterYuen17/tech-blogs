@@ -9,5 +9,6 @@ Solution:
 2. `git pull`
 3. `git stash pop`
 
-Explanation:    
+Explanation:  
+   
 `git stash` : stash your code locally, and return the project to the last commit. `git pull` : pull commits. `git stash pop` : auto-merge the conflicted files.
