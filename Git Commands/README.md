@@ -14,5 +14,7 @@ You are about to commit a change, but you notice that someone has modified the s
 
 You have pushed commits to the remote branch but now you want to return back to a historical version.
 
+### Solution:
+
 1. `git reset --hard ` + commitId.
 2. `git push -f -u origin master`.
