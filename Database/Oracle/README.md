@@ -23,7 +23,7 @@ EXTENT MANAGEMENT LOCAL;
 ```
 3. Create a User. Replace `your-username` and `your-password` with your own ones.
 ```sql
-alter session set "_ORACLE_SCRIPT"=true;  
+alter session set "_ORACLE_SCRIPT" = true;  
 
 CREATE USER your-username IDENTIFIED BY your-password
 ACCOUNT UNLOCK
@@ -41,5 +41,5 @@ The following command will not drop this user but all the tables it owns.
 
 ``````sql
 alter session set "_oracle_script" = true;
-drop user username CASCADE;
+drop user your-username CASCADE;
 ``````
