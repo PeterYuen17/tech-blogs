@@ -35,9 +35,7 @@ TEMPORARY TABLESPACE DB_TEMP01;
 GRANT CONNECT,RESOURCE,DBA TO your-username;
 ```
 
-## Scenario 2: Drop all the tables of an admin user
-
-The following command will not drop this user but all the tables it owns.
+## Scenario 2: Drop a user
 
 ``````sql
 alter session set "_oracle_script" = true;
