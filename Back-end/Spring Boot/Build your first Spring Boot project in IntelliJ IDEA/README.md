@@ -33,7 +33,7 @@
 ![](images/step7.png)
 
 8. The content of class `DemoController` is as follows.
-```
+```java
 package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
